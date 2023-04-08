@@ -1,0 +1,305 @@
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0px;
+	font-size: 2rem;
+	display: flex;
+	position: relative;
+}
+
+
+/* Analog Clock Design CSS */
+
+.clock-container {
+	min-height: 100vh;
+	background: #282828;
+	flex-basis: 45%;
+	text-align: center;
+}
+
+.analog-clock-container {
+	padding-top: 10rem;
+	margin: 0rem;
+	text-align: center;
+}
+
+.analog-clock-outer-circle {
+	width: 25rem;
+	height: 25rem;
+	margin: auto;
+	border: 0.5rem solid #282828;
+	border-radius: 50%;
+	padding: 1.5rem;
+	position: relative;
+	box-shadow: -4px -4px 10px rgba(67,67,67,0.5), inset 4px 4px 10px rgba(0,0,0,0.5), inset -4px -4px 10px rgba(67,67,67,0.5), 4px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Marking Line's Design CSS */
+
+.marking-lines {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #282828;
+	border-radius: 50%;
+}
+
+.marking-lines .time-line {
+	content: '';
+	position: absolute;
+	background: #FFF;
+	width: 0.25rem;
+	height: 100%;
+	left: 49%;
+}
+
+.marking-lines .time-line-one, .marking-lines .time-line-four {
+	width: 0.6rem;
+	background: #007991;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.time-line-two {
+	transform: rotate(30deg);
+}
+
+.time-line-three {
+	transform: rotate(60deg);
+}
+
+.time-line-four {
+	transform: rotate(90deg);
+}
+
+.time-line-five {
+	transform: rotate(120deg);
+}
+
+.time-line-six {
+	transform: rotate(150deg);
+}
+
+/* Inner circle design CSS */
+.analog-clock-inner-circle {
+	width: 80%;
+	height: 80%;
+	background: #282828;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	border-radius: 50%;
+}
+
+/* Creating dot between the clock -- at the origin point of all clock hands */
+.analog-clock-inner-circle::before {
+	content: '';
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: white;
+	display: block;
+	position: absolute;
+	left: 48%;
+	top: 48%;
+	z-index: 1;
+}
+
+/* Clock Hands Design CSS */
+/* The background CSS part is fethced using UiGradiant.com */
+.clock-hand {
+	height: 0.5rem;
+	width: 32%;
+	position: absolute;
+	top: 49%;
+	right: 50%;
+	border-radius: 0.5rem;
+	transform-origin: 100%;
+	background: #159957;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.clock-hand-min {
+	height: 0.3rem;
+	width: 39%;
+	top: 49.5%;
+	background: #aa4b6b;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.clock-hand-sec {
+	height: 0.15rem;
+	width: 45%;
+	top: 49.75%;
+	background: #FC5C7D;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Digital Clocl Design CSS */
+
+.digital-clock-container {
+	max-width: 100%;
+	margin: 10rem auto;
+}
+
+.digital-clock-full-box {
+	display: inline-flex;
+}
+
+.clock-box {
+	background: #FFF;
+    padding: 1.2rem;
+    font-size: 5rem;
+    letter-spacing: 0.6rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+	font-family: 'Stick No Bills', sans-serif;
+	width: 9rem;
+}
+
+
+/* Date Container Design CSS */
+
+.today-date-container {
+	background: #282828;
+}
+
+.today-date {
+	background: #ADA996;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 6rem;
+	letter-spacing: 0.8rem;
+	margin-top: 2rem;
+	font-family: 'Sedgwick Ave Display', cursive;
+}
+
+/* Alarms Box Design -- Heading, Form and List CSS */
+.alarm-container {
+	flex-basis: 55%;
+	background: #323232;
+	position: relative;
+}
+
+.container-heading {
+	font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    background: #FFF;
+    border-left: 2rem solid #282828;
+    padding-left: 2rem;
+    margin-left: 2rem;
+}
+
+/* Alarm Form Design CSS */
+
+.alarm-form {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.form-element {    
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 4rem;
+}
+
+input[type="number"], select#alarmPeriodInput {
+	width: 10rem;
+	height: 4rem;
+	padding: 1rem;
+	font-size: 4rem;
+	text-align: center;
+	display: inline-block;
+	border-radius: 0.8rem;
+}
+
+input[type="text"] {
+	width: 30rem;
+	height: 2.5rem;
+	padding: 0.4rem 2rem;
+	border-radius: 0.8rem;
+	margin-top: 3rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+select#alarmPeriodInput {
+	width: 10rem;
+    height: 6.4rem;
+    font-size: 2.8rem;
+}
+
+.form-element label {
+	font-size: 16px;
+	color: #FFF;
+	letter-spacing: 0.3rem;
+	margin-top: 0.8rem;
+}
+
+#submitButton {
+	padding: 1.2rem;
+    width: 18rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.38rem;
+    margin: 1.9rem 0px 0px 3rem;
+    background: #232526;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 1.2rem;
+    box-shadow: 0.1rem 0.1rem 1rem 0.1rem #FFF;
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-family: 'Cabin Sketch', cursive;
+    transition: 0.1s ease-in-out;
+}
+
+ul.alarm-list {
+    list-style: none;
+    margin-top: 6rem;
+    padding: 0rem 6.5rem;
+    height: 52vh;
+    overflow: auto;
+}
+
+/* Alarms List Design CSS */
+
+ul.alarm-list::-webkit-scrollbar{
+	display: none;
+}
+
+li.alarm-list-item {
+    color: #FFF;
+    display: flex;
+    height: 7.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alarm-list-time {
+	font-family: 'Stick No Bills', sans-serif;
+	font-size: 3rem;
+	letter-spacing: 0.25rem;
+}
+
+.alarm-list-description {
+	margin: 0rem 2rem;
+	font-size: 2.2rem;
+	font-family: sans-serif;
+}
+
+.alarm-list-delete i{
+	font-size: 2.4rem;
+	color: #b31217;
+}

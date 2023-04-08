@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Alarm Clock</title>
+	<link rel="icon" type="text/css" href="./assets/images/bell-regular.svg">
+
+	<!-- Used font.google.com - for fonts -->
+	<!-- Used UiGradiant.com - for all the gradiants used -->
+	<!-- Used FontAwesome - for the logos -->
+
+	<!-- Google Fonts CDN -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Orbitron:wght@500&family=Sedgwick+Ave+Display&family=Stick+No+Bills&display=swap" rel="stylesheet">
+
+	<!-- Fontawesome CDN -->
+	<script src="https://kit.fontawesome.com/d52a9ca14a.js" crossorigin="anonymous"></script>
+
+	<!-- External CSS File -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+
+	<!-- Clock Container -->
+	<section class="clock-container clock">
+
+		<!-- Analog Clock -->
+		<div class="analog-clock-container">
+			<!-- Outer circle of the clock -->
+			<div class="analog-clock-outer-circle">
+				<!-- Marking line of the clock -->
+				<div class="marking-lines">
+					<div class="time-line time-line-one"></div>
+					<div class="time-line time-line-two"></div>
+					<div class="time-line time-line-three"></div>
+					<div class="time-line time-line-four"></div>
+					<div class="time-line time-line-five"></div>
+					<div class="time-line time-line-six"></div>
+				</div>
+
+				<!-- Creating inner circle and clock hands -->
+				<div class="analog-clock-inner-circle">
+					<div id="clockHandHour" class="clock-hand clock-hand-hour"></div>
+					<div id="clockHandMin" class="clock-hand clock-hand-min"></div>
+					<div id="clockHandSec" class="clock-hand clock-hand-sec"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Digital Clock -->
+		<div class="digital-clock-container">
+			<div class="digital-clock-full-box">
+				<div id="clockHourBox" class="clock-box hour-box">09</div>
+				<div id="clockMinBox" class="clock-box min-box">43</div>
+				<div id="clockSecBox" class="clock-box sec-box">55</div>
+				<div id="clockPeriodBox" class="clock-box period-box">AM</div>
+			</div>
+
+			<!-- Show Day and Date In This Format -- "Day, Month Date" -->
+			<div class="today-date-container">
+				<div id="todayDate" class="today-date">Sun, April 1</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Alarm Container -->
+	<section class="alarm-container alarm">
+		<!-- Alarms Container Heading -->
+		<div class="container-heading">
+			<h2>Alarms</h2>
+		</div>
+		<!-- Create Form Which we take input for hour, min, sec, period and alarm label.. along with a submit button 
+			On click of submit button validation will run and if all are valid - a alarm will be created. -->
+		<div class="form-container">
+			<form id=alarmForm class="alarm-form" onsubmit="createAlarm(this); return false;">
+				<!-- Hour Input -->
+				<div class="form-element alarm-hour">
+					<input type="number" name="hour" id="alarmHourInput" min="1" max="12" required>
+					<label for="alarmHourInput">Hours</label>
+				</div>
+				<!-- Mins Input -->
+				<div class="form-element alarm-mins">
+					<input type="number" name="mins" id="alarmMinsInput" min="0" max="59" required>
+					<label for="alarmMinsInput">Minutes</label>
+				</div>
+				<!-- Seconds Input -->
+				<div class="form-element alarm-secs">
+					<input type="number" name="secs" id="alarmSecsInput" min="0" max="59" required>
+					<label for="alarmSecsInput">Seconds</label>
+				</div>
+				<!-- Period Input -- Implement a dropdown with 2 options - AM/PM -->
+				<div class="form-element alarm-period">
+				    <select id="alarmPeriodInput" required>
+				    	<option selected value="am">AM</option>
+				    	<option value="pm">PM</option>
+				    </select>
+					<label for="alarmPeriodInput" class="form-label">AM/PM</label>
+				</div>
+				<!-- Description Input Box -->
+				<div class="form-element alarm-description">
+					<input type="text" name="description" id="alarmDescriptionInput" maxlength="100">
+					<label for="alarmSecsInput">Description</label>
+				</div>
+				<!-- Submit Button with text = "Set Alarm" -->
+				<div class="form-element">
+					<button id="submitButton">Set Alarm</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- Alarms List -- Scrollable list - which will be filled through JS only
+		By default no alarms will be kept! -->
+		<div class="alarm-list-container">
+			<ul id="alarmList" class="alarm-list">
+			</ul>
+		</div>
+	</section>
+
+	<!-- External JS File -->
+	<script type="text/javascript" src="./assets/js/index.js"></script>
+</body>
+</html>
