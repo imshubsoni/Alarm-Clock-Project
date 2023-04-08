@@ -32,7 +32,9 @@ Used SetInterval() function after every 1000 milliseconds to update the time in 
 -- As the Description is not mandatory to be input, so creating custom label when description is empty.
 
 ## Hosting 
--- This website is hosted on GitHub.
+-- This website is hosted on GitHub and Netlify.
+-- GitHub Link -- https://imshubsoni.github.io/Alarm-Clock-Project/
+-- Netlify Link -- https://shubham-alarm-clock-project.netlify.app/
 
 ### Future Improvements
 --- Currently the alarms created by user refreshes once the use refersh the page. So, to implement database and set the list to be static so it doesn't refresh away when user reloads.
